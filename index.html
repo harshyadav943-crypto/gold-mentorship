@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh Yadav | Premium XAU/USD Mentorship</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #FFD700;
+            --dark-bg: #030303;
+            --card-glass: rgba(255, 255, 255, 0.03);
+            --gold-gradient: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--dark-bg); color: #fff; line-height: 1.6; overflow-x: hidden; scroll-behavior: smooth; }
+
+        /* Navigation */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 8%; background: rgba(0,0,0,0.95); backdrop-filter: blur(15px); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,215,0,0.1); }
+        .logo { font-size: 1.5rem; font-weight: 900; background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: 3px; }
+        .nav-links a { color: #888; text-decoration: none; margin-left: 30px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; }
+
+        /* Hero Section */
+        .hero { 
+            height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            padding: 0 8%; 
+            background: linear-gradient(to right, #000 40%, rgba(0,0,0,0.3)), url('harsh.jpg.png'); 
+            background-size: cover; 
+            background-position: center; 
+        }
+        .hero-content { max-width: 850px; }
+        .premium-tag { color: var(--gold); letter-spacing: 6px; font-weight: bold; font-size: 0.8rem; margin-bottom: 20px; display: block; text-transform: uppercase; }
+        .hero-content h1 { font-size: 5.5rem; line-height: 1; margin-bottom: 25px; text-transform: uppercase; font-weight: 900; }
+        .hero-content span { background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        /* Quotes Section */
+        .quotes-section { padding: 100px 8%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .quote-card { background: var(--card-glass); border: 1px solid #111; padding: 40px; border-radius: 20px; transition: 0.4s; }
+        .quote-card i { color: var(--gold); font-size: 2rem; margin-bottom: 20px; display: block; }
+        .quote-card p { font-size: 1.2rem; font-style: italic; color: #ccc; margin-bottom: 15px; }
+        .quote-card span { color: var(--gold); font-weight: bold; font-size: 0.75rem; letter-spacing: 1px; }
+
+        /* Pricing & Enrollment */
+        .enroll-container { padding: 120px 8%; text-align: center; background: #000; }
+        .discount-box {
+            background: rgba(255, 215, 0, 0.02);
+            border: 1px solid rgba(255, 215, 0, 0.15);
+            padding: 60px 40px;
+            border-radius: 40px;
+            display: inline-block;
+            width: 100%;
+            max-width: 650px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+        }
+        .ribbon {
+            position: absolute; top: 30px; right: -40px; background: #ff4757; color: white;
+            padding: 10px 45px; transform: rotate(45deg); font-weight: 900; font-size: 0.8rem;
+        }
+        .old-price { font-size: 1.8rem; color: #444; text-decoration: line-through; display: block; }
+        .new-price { font-size: 6rem; font-weight: 900; background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 5px 0; }
+        
+        .cta-btn { 
+            background: var(--gold-gradient); color: #000; padding: 22px 60px; font-size: 1.3rem; font-weight: 900; 
+            border-radius: 50px; text-decoration: none; transition: 0.4s; display: inline-flex; align-items: center; gap: 12px;
+            border: none; cursor: pointer; text-transform: uppercase; margin-top: 25px;
+        }
+        .cta-btn:hover { transform: scale(1.05); filter: brightness(1.2); }
+
+        /* Crypto Modal Styling */
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.96); backdrop-filter: blur(10px); }
+        .modal-content { background: #080808; margin: 5% auto; padding: 40px; border: 1px solid var(--gold); width: 90%; max-width: 450px; border-radius: 30px; text-align: center; position: relative; }
+        .wallet-addr { background: #111; padding: 15px; border-radius: 12px; margin: 20px 0; border: 1px dashed #333; font-family: monospace; color: var(--gold); word-break: break-all; font-size: 0.9rem; }
+        
+        .whatsapp-btn { background: #25D366; color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; font-weight: bold; margin-top: 20px; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 3.2rem; }
+            .new-price { font-size: 4rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">HARSH YADAV</div>
+    <div class="nav-links">
+        <a href="#quotes">Quotes</a>
+        <a href="#enroll">Premium Access</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="hero-content">
+        <span class="premium-tag">Premium Mentorship</span>
+        <h1>Master the <span>XAU/USD</span> King Strategy</h1>
+        <p style="font-size: 1.4rem; color: #999; margin-bottom: 40px; max-width: 650px;">Trade the gold market using institutional footprints. Expert guidance by Harsh Yadav.</p>
+        <a href="#enroll" class="cta-btn">Join Now — ₹6,999</a>
+    </div>
+</section>
+
+<section class="quotes-section" id="quotes">
+    <div class="quote-card">
+        <i class="fas fa-quote-left"></i>
+        <p>"The goal of a successful trader is to make the best trades. Money is secondary."</p>
+        <span>— Alexander Elder</span>
+    </div>
+    <div class="quote-card">
+        <i class="fas fa-quote-left"></i>
+        <p>"Trade what you see, not what you think. The market has no ego."</p>
+        <span>— Institutional Logic</span>
+    </div>
+    <div class="quote-card">
+        <i class="fas fa-quote-left"></i>
+        <p>"Risk comes from not knowing what you're doing."</p>
+        <span>— Warren Buffett</span>
+    </div>
+</section>
+
+<section class="enroll-container" id="enroll">
+    <div class="discount-box">
+        <div class="ribbon">50% DISCOUNT</div>
+        <p style="color: var(--gold); letter-spacing: 4px; font-weight: bold; margin-bottom: 10px;">PREMIUM ACADEMY PASS</p>
+        
+        <span class="old-price">Regularly ₹13,999</span>
+        <h2 class="new-price">₹6,999</h2>
+        
+        <a href="YOUR_UPI_LINK_HERE" class="cta-btn">
+            <i class="fas fa-bolt"></i> PAY VIA UPI / CARD / BANK
+        </a>
+
+        <p style="margin-top: 30px; color: #444; font-weight: bold;">— GLOBAL CRYPTO OPTION —</p>
+        
+        <button onclick="openModal()" style="background: none; border: 1px solid #26a17b; color: #26a17b; padding: 12px 30px; border-radius: 50px; cursor: pointer; font-weight: bold; margin-top: 10px;">
+            <i class="fab fa-ethereum"></i> PAY WITH USDT (TRC-20)
+        </button>
+    </div>
+</section>
+
+<div id="cryptoModal" class="modal">
+    <div class="modal-content">
+        <span style="position:absolute; top:20px; right:25px; cursor:pointer; color:#555;" onclick="closeModal()">✕</span>
+        <h2 style="color: var(--gold);">USDT (TRC-20)</h2>
+        <p style="font-size: 0.8rem; color: #888; margin-top: 5px;">Network: <b>Tron (TRC20) ONLY</b></p>
+        
+        <div style="background: white; padding: 15px; width: 180px; height: 180px; margin: 20px auto; border-radius: 15px;">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=TRkdSrrubYJFQHYxKmCHVEdjvGjVB9tr9x" alt="USDT QR" style="width:100%">
+        </div>
+        
+        <div class="wallet-addr" id="wallet">TRkdSrrubYJFQHYxKmCHVEdjvGjVB9tr9x</div>
+        <button onclick="copyWallet()" id="copyBtn" style="background: var(--gold-gradient); color: #000; border: none; padding: 10px 25px; border-radius: 5px; font-weight: 800; cursor: pointer; font-size: 0.8rem;">COPY ADDRESS</button>
+        
+        <br>
+        <a href="https://wa.me/YOUR_PHONE_NUMBER?text=Hi%20Harsh,%20I%20have%20sent%20the%20USDT%20payment%20for%20the%20mentorship.%20Here%20is%20my%20screenshot:" target="_blank" class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i> SEND PAYMENT SCREENSHOT
+        </a>
+    </div>
+</div>
+
+<footer style="padding: 60px 8%; text-align: center; color: #444; font-size: 0.8rem;">
+    &copy; 2026 HARSH YADAV ACADEMY | THE GOLD STANDARD
+</footer>
+
+<script>
+    function openModal() { 
+        document.getElementById('cryptoModal').style.display = 'block'; 
+    }
+    
+    function closeModal() { 
+        document.getElementById('cryptoModal').style.display = 'none'; 
+    }
+
+    function copyWallet() {
+        const walletText = "TRkdSrrubYJFQHYxKmCHVEdjvGjVB9tr9x";
+        const copyBtn = document.getElementById('copyBtn');
+        
+        navigator.clipboard.writeText(walletText).then(() => {
+            const originalText = copyBtn.innerText;
+            copyBtn.innerText = "COPIED!";
+            
+            setTimeout(() => {
+                copyBtn.innerText = originalText;
+            }, 2000);
+        }).catch(err => {
+            // Fallback for older browsers
+            alert("Address copied: " + walletText);
+        });
+    }
+
+    // Close modal if user clicks outside the box
+    window.onclick = function(event) {
+        let modal = document.getElementById('cryptoModal');
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+</script>
+
+</body>
+</html>
